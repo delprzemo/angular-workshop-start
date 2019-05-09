@@ -18,6 +18,10 @@ export class DogsListComponent implements OnInit {
   ngOnInit() {
   }
 
+  removeDog(dog: DogItem) {
+    this.dogListService.removeDog(dog.id);
+  }
+
   checkIfIdEven(item: DogItem) {
     return item.id % 2;
   }

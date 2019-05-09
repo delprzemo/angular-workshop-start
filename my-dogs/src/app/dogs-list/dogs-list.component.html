@@ -2,7 +2,7 @@
   <table>
     <tr *ngFor="let item of this.dogListService.dogs; let i = index" 
       [ngClass]="{'grey-background': i % 2}">
-      <app-dog-list-item [item]="item"></app-dog-list-item>
+      <app-dog-list-item [item]="item" (remove)="this.removeDog($event)"></app-dog-list-item>
     </tr>
   </table>
 </div>
