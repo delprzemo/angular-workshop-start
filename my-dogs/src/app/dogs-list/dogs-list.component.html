@@ -1,6 +1,6 @@
 <div [ngSwitch]="this.dogListService.dogs.length">
   <div *ngSwitchCase="0">
-    No elements found
+    No elements found <button (click)="redirectToHelp()">Help</button>
   </div>
   <div *ngSwitchDefault>
     <div *ngIf="this.dogListService.dogs">

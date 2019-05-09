@@ -12,7 +12,7 @@ export class DogListItemComponent implements OnInit {
   @Input() item: DogItem;
   @Output() remove: EventEmitter<DogItem> = new EventEmitter();
 
-  constructor(private dogListService: DogListService) { }
+  constructor() { }
 
   ngOnInit() {
   }
