@@ -14,9 +14,17 @@ export class DogsListComponent implements OnInit {
 
   constructor(public dogListService: DogListService, private router: Router) {
     this.dogListService.buildDogList();
+    this.syncData();
+
   }
 
   ngOnInit() {
+  }
+
+  syncData() {
+    this.dogListService.getDogs().subscribe(result =>{
+      this.dogs = result;
+    })
   }
 
   redirectToHelp() {
@@ -25,6 +33,7 @@ export class DogsListComponent implements OnInit {
 
   removeDog(dog: DogItem) {
     this.dogListService.removeDog(dog.id);
+    this.syncData();
   }
 
   checkIfIdEven(item: DogItem) {

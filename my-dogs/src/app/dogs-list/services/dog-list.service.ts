@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DogItem } from '../models/dog-item';
+import { MockedHttpService } from 'src/app/utils/mocked-http.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ export class DogListService {
 
   public dogs: DogItem[];
 
-  constructor() { }
+  constructor(private mockedHttpService: MockedHttpService) { }
 
   buildDogList() {
     this.dogs = [];
@@ -29,5 +30,9 @@ export class DogListService {
   addDog(dog: DogItem) {
     dog.id = Math.max.apply(Math, this.dogs.map((o) => o.id)) + 1;
     this.dogs.push(dog);
+  }
+
+  getDogs() {
+    return this.mockedHttpService.getDataAcync(this.dogs);
   }
 }

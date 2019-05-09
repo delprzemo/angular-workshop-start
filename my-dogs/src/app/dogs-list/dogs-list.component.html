@@ -1,16 +1,12 @@
-<div [ngSwitch]="this.dogListService.dogs.length">
+<div [ngSwitch]="this.dogs.length">
   <div *ngSwitchCase="0">
     No elements found <button (click)="redirectToHelp()">Help</button>
   </div>
   <div *ngSwitchDefault>
-    <div *ngIf="this.dogListService.dogs">
-      <table>
-        <tr *ngFor="let item of this.dogListService.dogs; let i = index" 
-          [ngClass]="{'grey-background': i % 2}">
-          <app-dog-list-item [item]="item" (remove)="this.removeDog($event)"></app-dog-list-item>
-        </tr>
-      </table>
-    </div>
+    <table>
+      <tr *ngFor="let item of this.dogs; let i = index" [ngClass]="{'grey-background': i % 2}">
+        <app-dog-list-item [item]="item" (remove)="this.removeDog($event)"></app-dog-list-item>
+      </tr>
+    </table>
   </div>
 </div>
-
