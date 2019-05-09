@@ -1,3 +1,15 @@
-<p>
-  dogs-list works!
-</p>
+<div *ngIf="this.dogListService.dogs" >
+  <table>
+    <tr *ngFor="let item of this.dogListService.dogs"> 
+      <td>
+          {{item.name}}
+      </td>
+      <td>
+          {{item.description}}
+      </td>
+      <td>
+          <img *ngIf="item.image" [src]="item.image" class="row-img">
+      </td>
+    </tr>
+  </table>
+</div>
