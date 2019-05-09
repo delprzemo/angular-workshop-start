@@ -1,15 +1,8 @@
-<div *ngIf="this.dogListService.dogs" >
+<div *ngIf="this.dogListService.dogs">
   <table>
-    <tr *ngFor="let item of this.dogListService.dogs"> 
-      <td>
-          {{item.name}}
-      </td>
-      <td>
-          {{item.description}}
-      </td>
-      <td>
-          <img *ngIf="item.image" [src]="item.image" class="row-img">
-      </td>
+    <tr *ngFor="let item of this.dogListService.dogs; let i = index" 
+      [ngClass]="{'grey-background': i % 2}">
+      <app-dog-list-item [item]="item"></app-dog-list-item>
     </tr>
   </table>
 </div>

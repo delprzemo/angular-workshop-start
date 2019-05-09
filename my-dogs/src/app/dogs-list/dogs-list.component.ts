@@ -17,4 +17,8 @@ export class DogsListComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  checkIfIdEven(item: DogItem) {
+    return item.id % 2;
+  }
 }
