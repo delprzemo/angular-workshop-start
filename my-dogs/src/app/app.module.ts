@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { DogListItemComponent } from './dogs-list/dog-list-item/dog-list-item.component';
 import { HelpComponent } from './help/help.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { AccountService } from './common/account-service.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,10 @@ import { LoginFormComponent } from './login-form/login-form.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AccountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
