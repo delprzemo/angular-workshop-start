@@ -16,14 +16,6 @@ export class LoginFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  emailChanged(event: Event) {
-    this.email = (event.target as EventTarget & {value: any}).value;
-  }
-
-  passwordChanged(event: Event) {
-    this.userPassword = event.target["value"];
-  }
-
   openLoginForm() {
     this.isLoginForm = !this.isLoginForm;
   }
