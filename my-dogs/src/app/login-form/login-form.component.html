@@ -1,12 +1,19 @@
 <span *ngIf="!isLogged && !isLoginForm">
   <button (click)="openLoginForm()">Log in</button>
 </span>
-<span *ngIf="!isLogged && isLoginForm">
-  <input placeholder="Email" [(ngModel)]="email">
-  <input placeholder="Password" [(ngModel)]="userPassword">
-  <button (click)="login()">Login</button>
-  <button (click)="cancel()">Cancel</button>
-</span>
+
+<form #form="ngForm" (ngSubmit)="submit()">
+  <span *ngIf="!isLogged && isLoginForm">
+    <input placeholder="Email" [(ngModel)]="email" name="email" required>
+    <input placeholder="Password" [(ngModel)]="userPassword" name="userPassword" required>
+    <button [disabled]="!this.form.valid" type="submit">Login</button>
+    <button (click)="cancel()">Cancel</button>
+
+    <span *ngIf="!this.form.valid && this.form.touched">
+      Login and password required
+    </span>
+  </span>
+</form>
 
 <span *ngIf="isLogged">
   <button (click)="logout()">Logout</button>

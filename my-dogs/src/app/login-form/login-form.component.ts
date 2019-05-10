@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login-form',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-form.component.less']
 })
 export class LoginFormComponent implements OnInit {
+  @ViewChild('form') form: FormControl;
   isLogged = false;
   isLoginForm = false;
   email = "";
@@ -15,16 +17,15 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit() {
   }
+  
+  submit() {
+    if(this.form.valid) {
+      this.isLogged = true;
+    }
+  }
 
   openLoginForm() {
     this.isLoginForm = !this.isLoginForm;
-  }
-
-  login() {
-    if (this.email && this.userPassword)
-      this.isLogged = true;
-    else
-      alert("Please provide login and password")
   }
 
   cancel() {
