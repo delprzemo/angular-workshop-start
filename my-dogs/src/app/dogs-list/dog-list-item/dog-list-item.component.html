@@ -2,7 +2,10 @@
   {{item.name}} 
 </td>
 <td>
-  {{item.description | hideText : 20}}
+  <app-description>
+      {{item.description | hideText : 20}}
+  </app-description>
+
 </td>
 <td>
   <img *ngIf="item.image" [src]="item.image" class="row-img">

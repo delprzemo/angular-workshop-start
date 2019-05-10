@@ -12,6 +12,7 @@ import { AccountService } from './common/account-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HideTextPipe } from './common/pipes/hide-text.pipe';
 import { HighlightTextDirective } from './common/directives/highlight-text.directive';
+import { DescriptionComponent } from './common/componets/description/description.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HighlightTextDirective } from './common/directives/highlight-text.direc
     HelpComponent,
     LoginFormComponent,
     HideTextPipe,
-    HighlightTextDirective
+    HighlightTextDirective,
+    DescriptionComponent
   ],
   imports: [
     BrowserModule,
