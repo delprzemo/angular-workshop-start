@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DogsListComponent } from './dogs-list/dogs-list.component';
@@ -16,8 +16,11 @@ import { DescriptionComponent } from './common/componets/description/description
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, 
-  MatListModule, MatExpansionModule } from '@angular/material';
+import {
+  MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule,
+  MatListModule, MatExpansionModule
+} from '@angular/material';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,8 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatProgressBarModule
   ],
   providers: [AccountService],
   bootstrap: [AppComponent]

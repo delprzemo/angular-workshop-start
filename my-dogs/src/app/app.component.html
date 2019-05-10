@@ -1,5 +1,7 @@
 <app-nav>
     <router-outlet></router-outlet>
+    <span *ngIf="progressBarService">
+        <mat-progress-bar mode="query" 
+        *ngIf="progressBarService.showProgressBar"></mat-progress-bar>
+    </span>
 </app-nav>
-
-

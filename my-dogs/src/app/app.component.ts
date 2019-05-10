@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProgressBarService } from './common/services/progress-bar.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'my-dogs';
 
-  constructor() {
-    let test = 1;
+  constructor(public progressBarService: ProgressBarService) {
   }
 }

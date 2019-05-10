@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DogItem } from './models/dog-item';
 import { DogListService } from './services/dog-list.service';
 import { Router } from '@angular/router';
+import { ProgressBarService } from '../common/services/progress-bar.service';
 
 @Component({
   selector: 'app-dogs-list', 
@@ -12,7 +13,9 @@ import { Router } from '@angular/router';
 export class DogsListComponent implements OnInit {
   dogs: DogItem[] 
 
-  constructor(public dogListService: DogListService, private router: Router) {
+  constructor(public dogListService: DogListService, 
+    private router: Router,
+    private progressBarService: ProgressBarService) {
     this.dogListService.buildDogList();
     this.syncData();
   }
@@ -21,8 +24,10 @@ export class DogsListComponent implements OnInit {
   }
 
   syncData() {
+    this.progressBarService.turnOnProgressBar();
     this.dogListService.getDogs().subscribe(result =>{
       this.dogs = result;
+      this.progressBarService.turnOffProgressBar();
     })
   }
 
