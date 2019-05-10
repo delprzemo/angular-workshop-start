@@ -18,7 +18,7 @@ import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import {
   MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule,
-  MatListModule, MatExpansionModule
+  MatListModule, MatExpansionModule, MatSnackBarModule
 } from '@angular/material';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
@@ -48,7 +48,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatIconModule,
     MatListModule,
     MatExpansionModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatSnackBarModule
   ],
   providers: [AccountService],
   bootstrap: [AppComponent]

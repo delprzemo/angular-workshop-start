@@ -1,4 +1,16 @@
-<div [appHighlightText]="'pointer'" [color]="'blue'">
+<div [appHighlightText]="'pointer'" 
+[color]="'blue'" 
+[@openClose]="isShowed ? 'open' : 'closed'"
+class="help-text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac orci id lectus tempus feugiat et at purus. Nulla porttitor faucibus arcu nec sagittis. Quisque sodales nisi sit amet dui malesuada gravida. Duis eu pulvinar dui. Morbi faucibus blandit lectus, sed facilisis turpis rhoncus vel. Fusce sapien nunc, iaculis id maximus maximus, tempus cursus velit. Duis aliquet sem sit amet ipsum eleifend cursus.
+  
+    Fusce vitae nisl condimentum, vulputate quam id, porttitor tortor. Phasellus cursus metus ante, et elementum sem pretium nec. Vivamus libero metus, vestibulum vel egestas eu, commodo sed enim. Phasellus arcu elit, pellentesque eu euismod vel, viverra nec quam. Quisque finibus mauris eu magna accumsan, ac rhoncus nisi interdum. Vivamus dictum faucibus ante eleifend pellentesque. Donec viverra lorem vitae feugiat convallis. Etiam ut pellentesque libero. Quisque quis ante sit amet enim malesuada consequat non a justo. Duis ac sodales enim.
+  
+    Etiam lorem lorem, accumsan sed ex in, finibus venenatis ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mollis risus sit amet arcu rutrum rhoncus. In ac commodo magna. Donec auctor faucibus odio ut ornare. Sed libero ex, ullamcorper vitae blandit sed, vulputate non massa. Praesent feugiat vitae turpis quis tincidunt.
+  
+    Sed feugiat leo eget urna laoreet, ut efficitur augue imperdiet. Vivamus venenatis velit eu metus ullamcorper hendrerit. Vivamus maximus lobortis consectetur. Vestibulum sed odio sodales, pellentesque nunc in, tincidunt quam. Pellentesque ut turpis id nunc semper aliquam ut nec elit. Aliquam tortor est, aliquet ut lorem finibus, venenatis tristique lorem. Quisque consectetur id felis non scelerisque. Morbi varius suscipit sem, eu consequat justo vulputate ut. Aliquam ac massa dolor. Mauris laoreet ligula eu purus dignissim, a congue mauris euismod. Integer eu viverra nibh, non blandit ligula.
+  
+    Cras consectetur, magna a bibendum accumsan, justo lorem vulputate diam, sit amet maximus tortor purus et quam. Etiam aliquam nunc a dolor efficitur, vel mattis orci laoreet. Cras id risus at erat malesuada condimentum. Curabitur vel bibendum ipsum, vel semper leo. Suspendisse viverra pharetra eros, a gravida leo ullamcorper vitae. Proin vel volutpat lacus, ut dignissim erat. Vivamus eget risus at ex blandit facilisis in at ipsum. Donec eros quam, finibus nec congue convallis, consectetur bibendum augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec id est congue lectus ullamcorper malesuada vitae et nibh. Vestibulum quis nibh ac lacus dignissim blandit. Duis facilisis efficitur ex, ac suscipit nulla blandit ut.
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac orci id lectus tempus feugiat et at purus. Nulla porttitor faucibus arcu nec sagittis. Quisque sodales nisi sit amet dui malesuada gravida. Duis eu pulvinar dui. Morbi faucibus blandit lectus, sed facilisis turpis rhoncus vel. Fusce sapien nunc, iaculis id maximus maximus, tempus cursus velit. Duis aliquet sem sit amet ipsum eleifend cursus.
   
     Fusce vitae nisl condimentum, vulputate quam id, porttitor tortor. Phasellus cursus metus ante, et elementum sem pretium nec. Vivamus libero metus, vestibulum vel egestas eu, commodo sed enim. Phasellus arcu elit, pellentesque eu euismod vel, viverra nec quam. Quisque finibus mauris eu magna accumsan, ac rhoncus nisi interdum. Vivamus dictum faucibus ante eleifend pellentesque. Donec viverra lorem vitae feugiat convallis. Etiam ut pellentesque libero. Quisque quis ante sit amet enim malesuada consequat non a justo. Duis ac sodales enim.
@@ -9,3 +21,7 @@
   
     Cras consectetur, magna a bibendum accumsan, justo lorem vulputate diam, sit amet maximus tortor purus et quam. Etiam aliquam nunc a dolor efficitur, vel mattis orci laoreet. Cras id risus at erat malesuada condimentum. Curabitur vel bibendum ipsum, vel semper leo. Suspendisse viverra pharetra eros, a gravida leo ullamcorper vitae. Proin vel volutpat lacus, ut dignissim erat. Vivamus eget risus at ex blandit facilisis in at ipsum. Donec eros quam, finibus nec congue convallis, consectetur bibendum augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec id est congue lectus ullamcorper malesuada vitae et nibh. Vestibulum quis nibh ac lacus dignissim blandit. Duis facilisis efficitur ex, ac suscipit nulla blandit ut.
   </div> 
+
+  <button (click) = "this.buttonClick()">
+      Expand
+  </button>

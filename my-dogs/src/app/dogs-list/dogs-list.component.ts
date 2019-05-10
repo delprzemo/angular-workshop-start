@@ -3,6 +3,7 @@ import { DogItem } from './models/dog-item';
 import { DogListService } from './services/dog-list.service';
 import { Router } from '@angular/router';
 import { ProgressBarService } from '../common/services/progress-bar.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-dogs-list', 
@@ -15,7 +16,8 @@ export class DogsListComponent implements OnInit {
 
   constructor(public dogListService: DogListService, 
     private router: Router,
-    private progressBarService: ProgressBarService) {
+    private progressBarService: ProgressBarService,
+    private snackBar: MatSnackBar) {
     this.dogListService.buildDogList();
     this.syncData();
   }
@@ -23,11 +25,14 @@ export class DogsListComponent implements OnInit {
   ngOnInit() {
   }
 
-  syncData() {
+  syncData(isElementRemoved = false) {
     this.progressBarService.turnOnProgressBar();
     this.dogListService.getDogs().subscribe(result =>{
       this.dogs = result;
       this.progressBarService.turnOffProgressBar();
+      if(isElementRemoved) {
+        this.snackBar.open("Item removed", "Close");
+      }
     })
   }
 
@@ -37,7 +42,7 @@ export class DogsListComponent implements OnInit {
 
   removeDog(dog: DogItem) {
     this.dogListService.removeDog(dog.id);
-    this.syncData();
+    this.syncData(true);
   }
 
   checkIfIdEven(item: DogItem) {
