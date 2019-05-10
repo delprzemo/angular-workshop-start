@@ -10,6 +10,8 @@ import { HelpComponent } from './help/help.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { AccountService } from './common/account-service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { HideTextPipe } from './common/pipes/hide-text.pipe';
+import { HighlightTextDirective } from './common/directives/highlight-text.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     DogListItemComponent,
     HelpComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    HideTextPipe,
+    HighlightTextDirective
   ],
   imports: [
     BrowserModule,
