@@ -2,8 +2,8 @@
   <button (click)="openLoginForm()">Log in</button>
 </span>
 <span *ngIf="!isLogged && isLoginForm">
-  <input placeholder="Email">
-  <input placeholder="Password">
+  <input placeholder="Email" [value]="email" (change)="this.emailChanged($event)">
+  <input placeholder="Password" [value]="userPassword" (change)="this.passwordChanged($event)">
   <button (click)="login()">Login</button>
   <button (click)="cancel()">Cancel</button>
 </span>
