@@ -13,6 +13,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { HideTextPipe } from './common/pipes/hide-text.pipe';
 import { HighlightTextDirective } from './common/directives/highlight-text.directive';
 import { DescriptionComponent } from './common/componets/description/description.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavComponent } from './nav/nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -24,13 +28,21 @@ import { DescriptionComponent } from './common/componets/description/description
     LoginFormComponent,
     HideTextPipe,
     HighlightTextDirective,
-    DescriptionComponent
+    DescriptionComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [AccountService],
   bootstrap: [AppComponent]
