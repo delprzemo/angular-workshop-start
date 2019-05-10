@@ -16,7 +16,8 @@ import { DescriptionComponent } from './common/componets/description/description
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, 
+  MatListModule, MatExpansionModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatExpansionModule
   ],
   providers: [AccountService],
   bootstrap: [AppComponent]

@@ -3,10 +3,9 @@
     No elements found <button (click)="redirectToHelp()">Help</button>
   </div>
   <div *ngSwitchDefault>
-    <table>
-      <tr *ngFor="let item of this.dogs; let i = index" [ngClass]="{'grey-background': i % 2}">
-        <app-dog-list-item [item]="item" (remove)="this.removeDog($event)"></app-dog-list-item>
-      </tr>
-    </table>
+    <mat-accordion>
+      <app-dog-list-item *ngFor="let item of this.dogs; let i = index" [item]="item" (remove)="this.removeDog($event)">
+      </app-dog-list-item>
+    </mat-accordion>
   </div>
 </div>

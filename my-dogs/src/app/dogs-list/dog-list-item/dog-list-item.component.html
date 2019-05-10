@@ -1,14 +1,17 @@
-<td>
-  {{item.name}} 
-</td>
-<td>
-  <app-description>
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{item.name}}
+    </mat-panel-title>
+    <mat-panel-description>
       {{item.description | hideText : 20}}
-  </app-description>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
 
-</td>
-<td>
-  <img *ngIf="item.image" [src]="item.image" class="row-img">
-</td>
+  <div><b>Name: </b>{{item.name}}</div>
+  <div><b>Description: </b>{{item.description}}</div>
+  <img [src]="item.image" class="row-img">
+  <div><button (click)="removeItem()">Remove</button></div>
 
-<button (click)="removeItem()">Remove</button>
+
+</mat-expansion-panel>
