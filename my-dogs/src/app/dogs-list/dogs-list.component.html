@@ -1,4 +1,4 @@
-<div [ngSwitch]="this.dogs.length">
+<div [ngSwitch]="this.dogs && this.dogs.length">
   <div *ngSwitchCase="0">
     No elements found <button (click)="redirectToHelp()">Help</button>
   </div>

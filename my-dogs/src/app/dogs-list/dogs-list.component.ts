@@ -15,7 +15,6 @@ export class DogsListComponent implements OnInit {
   constructor(public dogListService: DogListService, private router: Router) {
     this.dogListService.buildDogList();
     this.syncData();
-
   }
 
   ngOnInit() {
