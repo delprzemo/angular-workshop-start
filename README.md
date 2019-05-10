@@ -125,6 +125,7 @@ This is data used in training:
 |  Debugger for Chrome | used for VS Code debugging |
 |  vscode-angular-html | colorize Angular template |
 |  Angular Language Service| provides a rich editing experience for Angular templates, both inline and external templates |
+|  Angular Essentials | package with multiple useful Angular extensions |
 
 
  # CLI useful commands
