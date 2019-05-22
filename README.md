@@ -119,14 +119,9 @@ This is data used in training:
 
 
  # Useful extensions
-
-| Name  | Description |
-| ------------- | ------------- |
-|  Debugger for Chrome | used for VS Code debugging |
-|  vscode-angular-html | colorize Angular template |
-|  Angular Language Service| provides a rich editing experience for Angular templates, both inline and external templates |
-|  Angular Essentials | package with multiple useful Angular extensions |
-
+ Debugger for Chrome - used for VS Code debugging
+ vscode-angular-html - colorize Angular template
+ Angular Language Service - provides a rich editing experience for Angular templates, both inline and external templates
 
  # CLI useful commands
 
@@ -285,3 +280,34 @@ This is data used in training:
         [ngStyle]="{'background-image': 'url(' + avatarUrl + ')'}">
 </button>
 ```
+
+
+# Mapbox
+**Install**
+
+```
+npm install ngx-mapbox-gl mapbox-gl@0.53.1 --save
+npm install @types/mapbox-gl@0.51.4 --save-dev 
+```
+
+**Styles**
+```
+@import "~mapbox-gl/dist/mapbox-gl.css";
+@import "~@mapbox/mapbox-gl-geocoder/lib/mapbox-gl-geocoder.css";
+```
+
+**Fix problem with undefined global**
+
+```
+  <script>
+    var global = global || window;
+    var Buffer = Buffer || [];
+    var process = process || {
+      env: { DEBUG: undefined },
+      version: []
+    };
+  </script>
+```
+
+**All options**
+https://github.com/Wykks/ngx-mapbox-gl/wiki/API-Documentation#mgl-marker-mapbox-gl-api
