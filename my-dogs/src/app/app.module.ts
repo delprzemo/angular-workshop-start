@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { DogListComponent } from './dog-list/dog-list.component';
 import { HomeComponent } from './home/home.component';
 import { DogListService } from './dog-list/services/dog-list.service';
+import { DogListItemComponent } from './dog-list/dog-list-item/dog-list-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DogListComponent,
-    HomeComponent
+    HomeComponent,
+    DogListItemComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,4 @@
-<div *ngFor="let item of this.data">
-  <span>
-    {{item.name}}
-  </span>
-  <span>
-    {{item.description}}
-  </span>
-  <span>
-    <img [src]="item.image">
-  </span>
-</div>
+<app-dog-list-item *ngFor="let item of this.data" [dog]="item">
+</app-dog-list-item>
+
+<!-- .container>.col-md-5>span>div>div -->

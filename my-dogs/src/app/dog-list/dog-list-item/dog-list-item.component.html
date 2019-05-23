@@ -1,0 +1,11 @@
+<div [ngClass]="{'greyed' : dog.id % 2}">
+  <span>
+    {{dog.name}}
+  </span>
+  <span>
+    {{dog.description}}
+  </span>
+  <span>
+    <img [src]="dog.image">
+  </span>
+</div>
