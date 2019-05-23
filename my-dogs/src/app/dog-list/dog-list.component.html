@@ -1,0 +1,11 @@
+<div *ngFor="let item of this.data">
+  <span>
+    {{item["name"]}}
+  </span>
+  <span>
+    {{item["description"]}}
+  </span>
+  <span>
+    <img [src]="item['image']">
+  </span>
+</div>
