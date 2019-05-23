@@ -19,4 +19,9 @@ export class DogListComponent implements OnInit {
   ngOnInit() {
   }
 
+  removeDog(id: number) {
+    this.dogListService.removeDog(id);
+    this.data = this.dogListService.getDogList();
+  }
+
 }

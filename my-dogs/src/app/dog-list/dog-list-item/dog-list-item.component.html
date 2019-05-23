@@ -4,8 +4,11 @@
   </span>
   <span>
     {{dog.description}}
-  </span>
+  </span> 
   <span>
     <img [src]="dog.image">
   </span>
+
+  <button (click)="this.removeDog()"> Remove
+  </button>
 </div>

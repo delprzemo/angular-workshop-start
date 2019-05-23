@@ -11,6 +11,10 @@ export class DogListService {
     return this.data;
   }
 
+  removeDog(id: number) {
+    this.data = this.data.filter(x => x.id !== id);
+  }
+
   buildDogList() {
     this.data = [{
       id: 1,

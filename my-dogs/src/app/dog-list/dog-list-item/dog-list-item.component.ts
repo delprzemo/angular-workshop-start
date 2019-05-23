@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DogItem } from '../models/dog-item';
 
 @Component({
@@ -8,10 +8,14 @@ import { DogItem } from '../models/dog-item';
 })
 export class DogListItemComponent implements OnInit {
   @Input() dog: DogItem;
-  
+  @Output() remove: EventEmitter<number> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  removeDog() {
+    this.remove.emit(this.dog.id);
+  }
 }
