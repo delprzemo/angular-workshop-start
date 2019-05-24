@@ -22,10 +22,20 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if(this.form.valid) {
-      this.accountService.logIn(this.email, this.password);
+    if (this.form.valid) {
+      type token = { token: string };
+      this.accountService.logIn(this.email, this.password)
+        .subscribe(
+          (response: token) => {
+            this.accountService.getUserData().subscribe(userData => {
+              this.accountService.setActiveUser(userData.data.email,
+                this.password,
+                response.token,
+                userData.data.avatar);
+            });
+          });
     } else {
-      alert("email and password required");
+      alert("email and password required")
     }
 
   }

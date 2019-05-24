@@ -16,5 +16,6 @@
 
 <div *ngIf="this.accountService.isLogged()">
     Hello {{this.accountService.getUser().email}}
+    <img [src]="this.accountService.getUser().avatar">
     <button (click)="logout()">Log out</button>
 </div>
