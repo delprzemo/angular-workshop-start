@@ -1,4 +1,7 @@
-<app-dog-list-item *ngFor="let item of this.data" [dog]="item" (remove)="this.removeDog($event)">
-</app-dog-list-item>
+<div *ngIf="this.accountService.isLogged()">
+    <app-dog-list-item *ngFor="let item of this.data" [dog]="item" (remove)="this.removeDog($event)">
+    </app-dog-list-item>
+</div>
+
 
 <!-- .container>.col-md-5>span>div>div -->

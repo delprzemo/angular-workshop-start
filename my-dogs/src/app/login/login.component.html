@@ -1,0 +1,15 @@
+<div *ngIf="!this.showLoginForm && !this.accountService.isLogged()">
+    <button (click)="loginFormClick()">Log in</button>
+</div>
+
+<div *ngIf="this.showLoginForm && !this.accountService.isLogged()">
+    <input placeholder="Email" [value]="email" (change)="emailChange($event)" name="email">
+    <input placeholder="Password" [value]="password" (change)="pswChange($event)" name="password">
+    <button (click)="login()">Login</button>
+    <button (click)="cancel()">Cancel</button>
+</div>
+
+<div *ngIf="this.accountService.isLogged()">
+    Hello {{this.accountService.getUser().email}}
+    <button (click)="logout()">Log out</button>
+</div>
