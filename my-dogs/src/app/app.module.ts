@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms'
 import {HttpClientModule} from '@angular/common/http';
 import { CutTextPipe } from './pipes/cut-text.pipe';
 import { ChangeColorDirective } from './directives/change-color.directive'
+import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -22,18 +24,20 @@ import { ChangeColorDirective } from './directives/change-color.directive'
     DogListItemComponent,
     LoginComponent,
     CutTextPipe,
-    ChangeColorDirective
+    ChangeColorDirective,
+    MapComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMapboxGLModule.withConfig({
+      accessToken: 'pk.eyJ1IjoibWljaGxpcyIsImEiOiJjanZ4bWplcG8wNjhuNDNxaHRmaGpxbG1yIn0.Z4-1XADjLUTVZQp9JmNWcw'
+    })
   ],
   providers: [DogListService, AccountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 
-
-//pk.eyJ1IjoibWljaGxpcyIsImEiOiJjanZ4bWplcG8wNjhuNDNxaHRmaGpxbG1yIn0.Z4-1XADjLUTVZQp9JmNWcw
