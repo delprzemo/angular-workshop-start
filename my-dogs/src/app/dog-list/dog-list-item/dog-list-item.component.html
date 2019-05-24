@@ -1,9 +1,9 @@
-<div [ngClass]="{'greyed' : dog.id % 2}">
+<div [ngClass]="{'greyed' : dog.id % 2}" [appChangeColor]="'yellow'">
   <span>
     {{dog.name}}
   </span>
   <span>
-    {{dog.description | cutText : 10}}
+    {{dog.description | cutText : 20}}
   </span> 
   <span>
     <img [src]="dog.image">

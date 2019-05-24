@@ -11,7 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { AccountService } from './services/account.service';
 import { FormsModule } from '@angular/forms'
 import {HttpClientModule} from '@angular/common/http';
-import { CutTextPipe } from './pipes/cut-text.pipe'
+import { CutTextPipe } from './pipes/cut-text.pipe';
+import { ChangeColorDirective } from './directives/change-color.directive'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CutTextPipe } from './pipes/cut-text.pipe'
     HomeComponent,
     DogListItemComponent,
     LoginComponent,
-    CutTextPipe
+    CutTextPipe,
+    ChangeColorDirective
   ],
   imports: [
     BrowserModule,
@@ -32,3 +34,6 @@ import { CutTextPipe } from './pipes/cut-text.pipe'
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+//pk.eyJ1IjoibWljaGxpcyIsImEiOiJjanZ4bWplcG8wNjhuNDNxaHRmaGpxbG1yIn0.Z4-1XADjLUTVZQp9JmNWcw
