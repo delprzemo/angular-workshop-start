@@ -9,6 +9,7 @@ import { DogListService } from './dog-list/services/dog-list.service';
 import { DogListItemComponent } from './dog-list/dog-list-item/dog-list-item.component';
 import { LoginComponent } from './login/login.component';
 import { AccountService } from './services/account.service';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AccountService } from './services/account.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [DogListService, AccountService],
   bootstrap: [AppComponent]

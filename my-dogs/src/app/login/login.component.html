@@ -2,12 +2,17 @@
     <button (click)="loginFormClick()">Log in</button>
 </div>
 
+
 <div *ngIf="this.showLoginForm && !this.accountService.isLogged()">
-    <input placeholder="Email" [value]="email" (change)="emailChange($event)" name="email">
-    <input placeholder="Password" [value]="password" (change)="pswChange($event)" name="password">
-    <button (click)="login()">Login</button>
-    <button (click)="cancel()">Cancel</button>
+    <form #form="ngForm" (ngSubmit)="login()">
+        <input placeholder="Email" [(ngModel)]="this.email" name="email" required>
+        <input placeholder="Password" [(ngModel)]="this.password" name="password" required>
+        <button type="submit">Login</button>
+        <button (click)="cancel()">Cancel</button>
+    </form>
 </div>
+
+
 
 <div *ngIf="this.accountService.isLogged()">
     Hello {{this.accountService.getUser().email}}

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AccountService } from '../services/account.service';
+import { User } from '../models/user.model';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -11,22 +13,21 @@ export class LoginComponent implements OnInit {
   email: string = "";
   password: string = "";
   showLoginForm: boolean = false;
+  @ViewChild('form') form: FormControl;
 
   constructor(protected accountService: AccountService) { }
 
   ngOnInit() {
-  }
 
-  emailChange(event: any) {
-    this.email = event.target.value
-  }
-
-  pswChange(event: any) {
-    this.password = event.target.value
   }
 
   login() {
-    this.accountService.logIn(this.email, this.password);
+    if(this.form.valid) {
+      this.accountService.logIn(this.email, this.password);
+    } else {
+      alert("email and password required");
+    }
+
   }
 
   logout() {
