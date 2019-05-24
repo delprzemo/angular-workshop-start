@@ -1,7 +1,24 @@
-Maps
-<mgl-map
-    [style]="'mapbox://styles/mapbox/streets-v9'"
-    [zoom]="[9]"
-    [center]="[-74.50, 40]"
-  >
-  </mgl-map>
+<mgl-map [style]="'mapbox://styles/mapbox/streets-v9'" [zoom]="[zoom]" [center]="[21.011854, 52.230250]">
+  <mgl-marker *ngFor="let marker of markers" [lngLat]="[marker.lng, marker.lat]">
+    <div class="marker">
+      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg">
+    </div>
+  </mgl-marker>
+</mgl-map>
+
+
+<div class="map-panel">
+  <button (click)="zoomIn()">
+    +
+  </button>
+  <button (click)="zoomOut()">
+    -
+  </button>
+
+
+  <input [(ngModel)]="this.lat" name="lat">
+  <input [(ngModel)]="this.lng" name="lng">
+  <button (click)="addMarker()">Add marker</button>
+
+
+</div>
