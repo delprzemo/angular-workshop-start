@@ -3,7 +3,7 @@
     {{dog.name}}
   </span>
   <span>
-    {{dog.description}}
+    {{dog.description | cutText : 10}}
   </span> 
   <span>
     <img [src]="dog.image">

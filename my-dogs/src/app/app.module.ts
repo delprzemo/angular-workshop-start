@@ -10,7 +10,8 @@ import { DogListItemComponent } from './dog-list/dog-list-item/dog-list-item.com
 import { LoginComponent } from './login/login.component';
 import { AccountService } from './services/account.service';
 import { FormsModule } from '@angular/forms'
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { CutTextPipe } from './pipes/cut-text.pipe'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {HttpClientModule} from '@angular/common/http'
     DogListComponent,
     HomeComponent,
     DogListItemComponent,
-    LoginComponent
+    LoginComponent,
+    CutTextPipe
   ],
   imports: [
     BrowserModule,
