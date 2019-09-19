@@ -1,7 +1,7 @@
 <div *ngIf="this.data">
   <table>
     <tr *ngFor="let item of this.data" [ngClass]="{'grey-background': checkIfIdEven(item)}">
-      <app-list-item [dog]="item"></app-list-item>
+      <app-list-item [dog]="item" (removed)="removeDog($event)"></app-list-item>
     </tr>
   </table>
 </div>

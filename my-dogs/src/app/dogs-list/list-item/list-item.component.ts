@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DogItem } from '../models/dog-item';
+import { DogListService } from '../services/dog-list.service';
 
 @Component({
   selector: 'app-list-item',
@@ -8,9 +9,15 @@ import { DogItem } from '../models/dog-item';
 })
 export class ListItemComponent implements OnInit {
   @Input() dog: DogItem;
+  @Output() removed: EventEmitter<DogItem> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  remove(dog:DogItem) {
+    this.removed.emit(dog);
   }
 
 }

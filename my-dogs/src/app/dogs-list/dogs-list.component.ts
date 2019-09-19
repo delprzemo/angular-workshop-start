@@ -18,4 +18,9 @@ export class DogsListComponent {
     return item.id % 2 === 0;
   }
 
+  removeDog(dog:DogItem) {
+    this.dogListService.removeDog(dog.id);
+    this.data = this.dogListService.dogs;
+  }
+
 }
