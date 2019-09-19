@@ -14,4 +14,8 @@ export class DogsListComponent {
     this.data = this.dogListService.dogs;
   }
 
+  checkIfIdEven(item: DogItem): boolean {
+    return item.id % 2 === 0;
+  }
+
 }

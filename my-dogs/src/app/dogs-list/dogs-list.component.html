@@ -1,15 +1,7 @@
-<div *ngIf="this.data" >
+<div *ngIf="this.data">
   <table>
-    <tr *ngFor="let item of this.data">
-      <td>
-          {{item.name}}
-      </td>
-      <td>
-          {{item.description}}
-      </td>
-      <td>
-          <img *ngIf="item.image" [src]="item.image" class="row-img">
-      </td>
+    <tr *ngFor="let item of this.data" [ngClass]="{'grey-background': checkIfIdEven(item)}">
+      <app-list-item [dog]="item"></app-list-item>
     </tr>
   </table>
 </div>
