@@ -5,3 +5,8 @@
     </tr>
   </table>
 </div>
+
+<div [ngSwitch]="isDataEmpty()">
+  <div *ngSwitchCase="true"> No elements found. <span (click)="redirectToHelp()">Go to help</span></div>
+  <div *ngSwitchCase="false">{{this.data.length}} elements found</div>
+</div>
