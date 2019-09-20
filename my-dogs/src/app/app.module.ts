@@ -10,6 +10,8 @@ import { ListItemComponent } from './dogs-list/list-item/list-item.component';
 import { HelpComponent } from './help/help.component';
 import { MockedHttpService } from './utils/mocked-http.service';
 import { AccountComponent } from './account/account.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { AccountComponent } from './account/account.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [DogListService, MockedHttpService],
   bootstrap: [AppComponent]

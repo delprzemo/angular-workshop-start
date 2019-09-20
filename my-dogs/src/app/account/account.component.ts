@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { UserLogin } from './models/user-login';
+import { FormControl } from '@angular/forms';
+import { AccountService } from './services/account.service';
 
 @Component({
   selector: 'app-account',
@@ -6,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./account.component.less']
 })
 export class AccountComponent implements OnInit {
-
-  isLogged = false;
+  @ViewChild('form') form: FormControl;
+  
   isLoginForm = false;
+  userLoginModel: UserLogin;
 
-  constructor() { }
+  constructor(private accountService: AccountService) {
+    this.userLoginModel = new UserLogin();
+   }
 
   ngOnInit() {
   }
@@ -20,16 +26,32 @@ export class AccountComponent implements OnInit {
   }
 
   login() {
-    this.isLogged = true;
-  }
+      this.accountService.logIn(this.userLoginModel.email, this.userLoginModel.password)
+      .subscribe((response: {token: string}) => {
+        this.accountService.getUserData().subscribe((userData)=> {
+          this.accountService.setActiveUser(this.userLoginModel.email, 
+            this.userLoginModel.password, 
+            response.token, 
+            userData.data.avatar);
+        });
+      }, error => alert( JSON.stringify(error)))
+    }
 
   cancel() {
     this.isLoginForm = false;
   }
 
   logout() {
-    this.isLogged = false;
     this.isLoginForm = false;
+    this.accountService.logOut();
+  }
+
+  isLogged() {
+    return this.accountService.isLogged();
+  }
+
+  getUser() {
+    return this.accountService.getUser();
   }
 
 }
